@@ -16,6 +16,7 @@ class TestTextBox(BaseTest):
         header = self.text_box_page.get_text_box_header()
         assert header == get_data("Headers", "TEXT_BOX_HEADER")
 
+    @pytest.mark.regression
     def test_form_submission(self):
         self.elements_page = ElementsPage(self.driver)
         self.elements_page.navigate_to_elements_page()
@@ -43,6 +44,7 @@ class TestTextBox(BaseTest):
             permanent_addr) == self.text_box_page.get_paragraph_permanent_address()
         time.sleep(3)
 
+    @pytest.mark.regression
     def test_empty_form_submission(self):
         self.elements_page = ElementsPage(self.driver)
         self.elements_page.navigate_to_elements_page()
@@ -51,4 +53,24 @@ class TestTextBox(BaseTest):
 
         self.text_box_page.click_submit_button()
         assert self.text_box_page.get_output_div_text() == ''
-        time.sleep(3)
+
+    # def test_partial_form_submission(self):
+    #     self.elements_page = ElementsPage(self.driver)
+    #     self.elements_page.navigate_to_elements_page()
+    #     self.text_box_page = TextBoxPage(self.driver)
+    #     self.text_box_page.navigate_to_text_box_page()
+
+    #     email = get_data("UserData", "EMAIL")
+    #     permanent_addr = get_data("UserData", "PERMANENT_ADDRESS")
+
+    #     self.text_box_page.enter_email(email)
+    #     self.text_box_page.enter_permanent_address(permanent_addr)
+    #     self.text_box_page.click_submit_button()
+
+    #     print(self.text_box_page.get_output_div_text())
+        # assert self.text_box_page.get_paragraph_name() is None
+        # assert "Email:{}".format(
+        #     email) == self.text_box_page.get_paragraph_email()
+        # assert self.text_box_page.get_paragraph_current_address() is None
+        # assert "Permananet Address :{}".format(
+        #     permanent_addr) == self.text_box_page.get_paragraph_permanent_address()
