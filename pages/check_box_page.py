@@ -16,3 +16,6 @@ class CheckBoxPage(BasePage):
 
     def get_check_box_header(self):
         return self.find(self.CHECK_BOX_HEADER).text
+
+    def some_func(self):
+        pass
