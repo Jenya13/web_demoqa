@@ -20,6 +20,9 @@ class BasePage:
     def exex_script(self, script: str):
         self.driver.execute_script(script=script)
 
+    def func1(self):
+        pass
+
     # def is_visible(self,by_locator):
     #     element = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(by_locator))
     #     return bool(element)
