@@ -21,7 +21,7 @@ class BasePage:
         self.driver.execute_script(script=script)
 
     def func1(self):
-        print("1+2+3+4+5+77")
+        print("1+2+3+4+5+77]]")
 
     # def is_visible(self,by_locator):
     #     element = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(by_locator))
